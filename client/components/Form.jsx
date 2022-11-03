@@ -14,12 +14,14 @@ function Form(props) {
     const name = event.currentTarget.elements.name.value
     const dish = event.currentTarget.elements.dish.value
     const rating = event.currentTarget.elements.rating.value
+    const website = event.currentTarget.elements.website.value
 
     const newRestaurant = {
       id: props.restaurants.length + 1,
       name,
       dish,
       rating,
+      website,
     }
 
     // add a new book to the state
@@ -40,12 +42,13 @@ function Form(props) {
           required={true}
         />
         <input type="text" name="dish" placeholder="Signature Dish" />
+        <input type="url" name="website" placeholder="Website" />
         <input
           type="number"
           name="rating"
           placeholder="Star Rating"
           required
-          pattern="[0-5]*" //may need to change to 0-9
+          pattern="[0-5]" //may need to change to 0-9 with * after ]
         />
         <Button>Add</Button>
       </section>
