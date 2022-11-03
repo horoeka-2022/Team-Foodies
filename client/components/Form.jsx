@@ -1,7 +1,10 @@
+// import React {createContext, useReducer, useEffect} from 'react'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+// import {restaurantReducer } from '../reducers/restaurantReducer'
 
 import Button from './Button'
+// import { useEffect, useReducer } from 'react/cjs/react.production.min'
 
 function Form(props) {
   // a function to call on the route to redirect to
@@ -24,11 +27,36 @@ function Form(props) {
       website,
     }
 
-    // add a new book to the state
+    // add a new restaurant to the state
     props.setRestaurants((blah) => [...blah, newRestaurant]) //changed from state to blah
+    // localStorage.setItem('data', 'newRestaurant')
+    //added below this
+
+    // added above this
 
     // to clear the form
     event.target.reset()
+
+    //-------------------------------- CHANGES BELOW THIS LINE --------------------------------------------------------------- /////
+
+    // export const RestaurantContext = createContext()
+
+    // const RestaurantContextProvider = (props) => {
+    //   const [restaurants, dispatch] = useReducer(restaurantReducer, [], () => {
+    //     const localData = localStoragegetItem('restaurants')
+    //     return localData ? JSON.parse(localData) : []
+    //   })
+    //   useEffect(() => {
+    //     localStorage.setItem('restaurants', JSON.stringify(restaurants))
+    //   }, [restaurants])
+    //   return (
+    //     <RestaurantContext.Provider value={{ restaurants, dispatch }}>
+    //       {props.children}
+    //     </RestaurantContext.Provider>
+    //   )
+    // }
+
+    //-------------------------------- CHANGES ABOVE THIS LINE --------------------------------------------------------------- /////
 
     navigate('/')
   }

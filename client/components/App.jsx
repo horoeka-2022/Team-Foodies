@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 
 import data from '../data'
@@ -7,6 +7,10 @@ import Form from './Form'
 
 function App() {
   const [restaurants, setRestaurants] = useState(data)
+
+  useEffect(() => {
+    localStorage.setItem('data', JSON.stringify(data))
+  }, [restaurants])
 
   return (
     <main className="bg-red-500 w-screen h-screen flex justify-center items-center">
