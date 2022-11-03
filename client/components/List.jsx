@@ -6,7 +6,7 @@ function List(props) {
     <>
       <Link to="/add">Add New Restaurant</Link>
       <ul>
-        {props.restaurants.map((restaurant) => (
+        {props.restaurants?.map((restaurant) => (
           <li key={restaurant.id} className="p-4 m-4 bg-white shadow-lg">
             <p>{restaurant.name}</p>
             <p>{restaurant.dish}</p>
