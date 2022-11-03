@@ -9,8 +9,9 @@ function App() {
   const [restaurants, setRestaurants] = useState(data)
 
   useEffect(() => {
-    localStorage.setItem('data', JSON.stringify(data))
-  }, [restaurants])
+    const data = localStorage.getItem('data')
+    setRestaurants(() => JSON.parse(data))
+  }, [])
 
   return (
     <main className="bg-red-500 w-screen h-screen flex justify-center items-center">
