@@ -8,10 +8,10 @@ function List(props) {
       <ul>
         {props.restaurants?.map((restaurant) => (
           <li key={restaurant.id} className="p-4 m-4 bg-white shadow-lg">
-            <p>{restaurant.name}</p>
-            <p>{restaurant.dish}</p>
-            <p>{restaurant.rating}</p>
-            <p>{restaurant.website}</p>: <p>"add a restaurant!"</p>
+            <p>Name: {restaurant.name}</p>
+            <p>Dish: {restaurant.dish}</p>
+            <p>Stars: {restaurant.rating}</p>
+            <p>Site: {restaurant.website}</p>
           </li>
         ))}
       </ul>
