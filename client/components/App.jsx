@@ -16,14 +16,14 @@ function App() {
   }, [])
 
   return (
-    <main className="bg-red-500 w-screen h-screen flex justify-center items-center">
+    <main className="bg-red-500 w-screen flex justify-center items-center">
       <div className="mx-auto ">
         <header className="mb-20">
-          <h1 className="text-center text-white text-3xl">
+          <h1 className="text-center text-white text-3xl mt-52">
             Restaurant Recommendations
           </h1>
         </header>
-        <div className="flex flex-col space-x-2 justify-center">
+        <div className="flex flex-col space-x-2 justify-center mb-52">
           <Routes>
             <Route path="/" element={<List restaurants={restaurants} />} />
             <Route

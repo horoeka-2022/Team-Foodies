@@ -33,7 +33,7 @@
 */
 
 html {
-  line-height: 1.0;
+  line-height: 1.5;
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
@@ -570,16 +570,24 @@ video {
   margin-bottom: 5rem;
 }
 
+.mt-40 {
+  margin-top: 10rem;
+}
+
+.mt-52 {
+  margin-top: 13rem;
+}
+
+.mb-52 {
+  margin-bottom: 13rem;
+}
+
 .inline-block {
   display: inline-block;
 }
 
 .flex {
   display: flex;
-}
-
-.h-screen {
-  height: 250vh;
 }
 
 .w-screen {
