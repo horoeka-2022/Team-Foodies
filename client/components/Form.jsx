@@ -17,7 +17,7 @@ function Form(props) {
     const website = event.currentTarget.elements.website.value
 
     const newRestaurant = {
-      id: props.restaurants.length + 1,
+      id: props.restaurants ? props.restaurants.length + 1 : 0,
       name,
       dish,
       rating,
@@ -25,18 +25,20 @@ function Form(props) {
     }
 
     // add a new restaurant to the state
-    props.setRestaurants((blah) => [...blah, newRestaurant]) //changed from state to blah
     // localStorage.setItem('data', 'newRestaurant')
 
     // to clear the form
-    event.target.reset()
 
     //-------------------------------- CHANGES BELOW THIS LINE --------------------------------------------------------------- /////
 
-    localStorage.setItem(
-      'data',
-      JSON.stringify([...props.restaurants, newRestaurant])
-    )
+    if (props.restaurants) {
+      props.setRestaurants((blah) => [...blah, newRestaurant]) //changed from state to blah
+      event.target.reset()
+      localStorage.setItem(
+        'data',
+        JSON.stringify([...props.restaurants, newRestaurant])
+      )
+    }
 
     //-------------------------------- CHANGES ABOVE THIS LINE --------------------------------------------------------------- /////
 
@@ -49,7 +51,7 @@ function Form(props) {
           type="text"
           name="name"
           placeholder="Restaurant Name"
-          required={true}
+          //required={true}
         />
         <input type="text" name="dish" placeholder="Signature Dish" />
         <input type="url" name="website" placeholder="Website" />
@@ -57,8 +59,8 @@ function Form(props) {
           type="number"
           name="rating"
           placeholder="Star Rating"
-          required
-          pattern="[0-5]" //may need to change to 0-9 with * after ]
+          // required
+          // pattern="[0-5]" //may need to change to 0-9 with * after ]
         />
         <Button>Add</Button>
       </section>
