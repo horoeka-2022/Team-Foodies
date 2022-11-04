@@ -8,7 +8,11 @@ function App() {
 
   useEffect(() => {
     const data = localStorage.getItem('data')
-    setRestaurants(() => JSON.parse(data))
+    if (data) {
+      setRestaurants(() => JSON.parse(data))
+    } else {
+      setRestaurants(() => [])
+    }
   }, [])
 
   return (

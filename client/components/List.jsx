@@ -11,7 +11,7 @@ function List(props) {
             <p>{restaurant.name}</p>
             <p>{restaurant.dish}</p>
             <p>{restaurant.rating}</p>
-            <p>{restaurant.website}</p>
+            <p>{restaurant.website}</p>: <p>"add a restaurant!"</p>
           </li>
         ))}
       </ul>
