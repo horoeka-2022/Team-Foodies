@@ -33,7 +33,7 @@
 */
 
 html {
-  line-height: 1.5;
+  line-height: 1.2; 
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
@@ -578,8 +578,9 @@ video {
   display: flex;
 }
 
+/* change/remove below if necessary - larger number = taller background*/
 .h-screen {
-  height: 100vh;
+  height: 180vh;
 }
 
 .w-screen {
